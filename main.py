@@ -129,7 +129,7 @@ def create_ics(classes):
     for i in classes:
         event = Event(name=i["name"], begin=i["begin"], end=i["end"], location=i["location"], description=i["description"])
         cal.events.add(event)
-    with open("curricula.ics", "w") as f:
+    with open("curricula.ics", "w", encoding="utf-8") as f:
         f.writelines(cal.serialize_iter())
 
 
